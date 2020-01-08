@@ -9,6 +9,7 @@ $offWhite: #eee;
 *, *::after, *::before {
     margin: 0; padding: 0; box-sizing: border-box;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -35,111 +36,191 @@ h3 {
         margin: 0 25px 0 -9rem;
         position: absolute;
         top: 50%;
-        -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
     }
 }
 p {
-    line-height: 1.3;
+    line-height: 1.5;
+    font-size: 18px;
 }
 a{ 
     text-decoration: none;
     font-size: 16px;
+    color: $purple;
+}
+ul {
+    list-style-type: none;
 }
 .wrapper {
     width: 80%;
     margin: 0 auto;
 }
-
 //------------------------------------------------------HERO
 .hero {
     height: 100vh;
-    margin: auto;
+    padding: 443px 0 0 0;
 }
 .hero-h1 {
     font-family: 'Open Sans', sans-serif;
-    font-size: 160px;
-    line-height: 1;
-    padding-bottom: 25px;
-    margin-top: 25%;
+    font-size: 55px;
+    line-height: 1.2;
+    padding-bottom: 10px;
     color: $purple;
     background: linear-gradient(135deg, $purple, $pink);
     -webkit-background-clip: text;
     color: transparent;
 }
 .nav-bar {
-    width: 100%;
-    margin: 1.5em auto;
-    text-align: right;
-    a {
-        margin-left: 55px;
-        color: $purple;
-        &:last-child {
-            font-weight: 700;
+    display: none;
+}
+.navBar--mob {
+    position: fixed;
+    top: 45px;
+    right: 45px;
+    z-index: 1;
+    .toggler {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+    .hamburger {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        > div {
+            position: relative;
+            width: 100%;
+            height: 3px;
+            background-color: $purple;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                top: -10px;
+                width: 100%;
+                height: 3px;
+                background: inherit;
+            }
+            &::after {
+                top: 10px;
+            }
         }
-        &:hover:not(:last-child) {
-            color: $gray;
+    }
+    .toggler:checked ~ .nav--mob {
+        visibility: visible;
+        opacity: 1;
+    }
+    .toggler:checked + .hamburger > div {
+        transform: rotate(135deg);
+    }
+    .toggler:checked + .hamburger > div::before,
+    .toggler:checked + .hamburger > div::after,{
+        top: 0;
+        transform: rotate(90deg);
+    }
+    .toggler:checked:hover + .hamburger > div {
+        transform: rotate(225deg);
+    }
+    .nav--mob {
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex: none;
+        align-items: center;
+        overflow: hidden;
+        background: white;
+        opacity: 0;
+        transition: all 0.4s ease;
+        > ul {
+            width: 80%;
+            margin: 0 auto;
+            li {
+                margin: 1em auto;
+                a {
+                    font-size: 2em;
+                    font-weight: 700;
+                }
+            }
         }
     }
 }
 //------------------------------------------------------PROJECTS
 .projects {
-    margin: 35vh auto 0 auto;
+    margin: 9em auto 0 auto;
     padding: 3em 0;
-}
-ul {
-    list-style-type: none;
-    margin: 2em 0 0 0;
-    padding: 0;
+    ul {
+        margin: 2.5em 0 0 0;
+    }
 }
 .card {
-    display: flex;
-    align-items: center;
-    margin-bottom: 3em;
+    margin-bottom: 4em;
     img {
-        width: 45%;
-        margin: 0 80px 0 0;
-        border-radius: 7px;
+        width: 100%;
+        margin: 0 0 1em 0;
+        border-radius: 3px;
         box-shadow: 0px 7px 15px -2px rgba(0,0,0,0.20);
     }
-}
-.cardInfo {
-    h2 {
-        margin-bottom: 0.3em;
+    .cardInfo {
+        h2 {
+            margin-bottom: 0.2em;
+        }
+        p {
+            margin-bottom: 0.8em;
+        }
     }
-    p {
-        margin-bottom: 2em;
+    .btn {
+        display: inline-block;
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+        padding: 0.7em 2em;
+        border-radius: 100px;
+        border: none;
+        cursor: pointer;
     }
-}
-.btn {
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    padding: 0.7em 3em;
-    border-radius: 100px;
-    border: none;
-    cursor: pointer;
-}
-.btn-live {
-    color: $purple;
-    border: 2px solid $purple;
-    &:hover{
-        background-color: $purple;
-        color: #fff;
+    .btn-live {
+        color: $purple;
+        border: 1.5px solid $purple;
+        background-color: transparent;
+        &:hover{
+            background-color: $purple;
+            color: #fff;
+        }
     }
-}
-.btn-src {
-    color: $gray;
-    margin-left: 5px;
-    &:hover{
-        background-color: $offWhite;
-    }
+    .btn-src {
+        margin-left: 3px;
+        color: $gray;
+        background-color: transparent;
+        &:hover{
+            background-color: $offWhite;
+        }
+    }    
 }
 .h2-blurb {
     text-align: center;
     color: $gray;
-    margin-top: 5em;
+    margin: 5em 0;
     a {
         font-size: inherit;
         color: $purple;
@@ -150,33 +231,113 @@ ul {
     background-color: $offWhite;
 }
 .hire {
-    margin: 6em auto 0 auto;
     padding: 3em 0;
-}
-.hire-a {
-    display: block;
-    color: $darkGray;
-    font-size: 3.4em;
-    font-weight: 700;
-}
-.mail {
-    margin-bottom: 20px;
-}
-.contact {
-    margin: 4em auto 11em auto;  
-}
-.foot {
-    display: flex;
-    justify-content: space-between;
+    .hire-a {
+        display: block;
+        color: $darkGray;
+        font-size: 1.5em;
+        font-weight: 700;
+    }
+    .contact {
+        margin: 3em auto 9em auto;  
+    }
+    .mail {
+        margin: 0 0 0.7em 0;
+    }
 }
 .foot-nav {
-    margin-bottom: 1em;
-    a {
-        margin-right: 55px;
-        color: $purple;
+    margin: 0 0 3.3em 0;
+    li {
+        margin: 0 0 0.5em 0;
     }
 }
 .detail {
     width: 100%;
-    border-top: 15px solid $purple;
+    border-top: 10px solid $purple;
+    margin-top: 2em;
+}
+
+//------------------------------------------DSKTP QUERY
+@media screen and (min-width: 768px) {
+    .hero {
+        padding: 0;
+        .hero-h1 {
+            font-size: 160px;
+            line-height: 1;
+            padding-bottom: 25px;
+            margin-top: 25%;
+            word-wrap: break-word;
+        }
+        .navBar--mob {
+            display: none;
+        }
+        .nav-bar {
+            display: block;
+            width: 100%;
+            margin: 2em auto;
+            text-align: right;
+            a {
+                margin-left: 55px;
+                color: $purple;
+                &:last-child {
+                    font-weight: 700;
+                }
+                &:hover:not(:last-child) {
+                    color: $gray;
+                }
+            }
+        }
+    }
+    .projects {
+        margin: 35vh auto 0 auto;
+        .card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3em;
+            img {
+                width: 45%;
+                margin: 0 80px 0 0;
+                border-radius: 7px;
+            }
+            .cardInfo {
+                h2 {
+                    margin-bottom: 0.3em;
+                }
+                p {
+                    margin-bottom: 2em;
+                }
+            }
+            .btn {
+                padding: 0.7em 3em;
+            }
+            .btn-live {
+                border: 2px solid $purple;
+            }
+        }
+    }
+    .hire {
+        .hire-a {
+            font-size: 3.4em;
+        }
+        .contact {
+            margin: 4em auto 11em auto;
+        }
+        .mail {
+            margin-bottom: 20px;
+        }
+    }
+    .foot {
+        display: flex;
+        justify-content: space-between;
+        .foot-nav {
+            margin: 0 0 0 0;
+            li {
+                display: inline;
+                margin: 0 55px 0 0;
+            }
+        }
+    }
+    .detail {
+        margin: 1.5em 0 0 0;
+    }
 }
