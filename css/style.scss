@@ -134,7 +134,7 @@ ul {
         transform: rotate(135deg);
     }
     .toggler:checked + .hamburger > div::before,
-    .toggler:checked + .hamburger > div::after,{
+    .toggler:checked + .hamburger > div::after {
         top: 0;
         transform: rotate(90deg);
     }
