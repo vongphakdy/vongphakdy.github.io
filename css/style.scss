@@ -17,7 +17,7 @@ body {
     font-size: 20px;
     font-weight: 400;
     color: $gray;
-    background-color: #fff;
+    background-color: fff;
 }
 h2 {
     color: $darkGray;
@@ -34,8 +34,8 @@ h3 {
         display: inline-block;
         content: "";
         border-top: 1px solid $gray;
-        width: calc(9rem - 25px);
-        margin: 0 25px 0 -9rem;
+        width: calc(9rem - 15px);
+        margin: 0 15px 0 -9rem;
         position: absolute;
         top: 50%;
         -moz-transform: translateY(-50%);
@@ -51,6 +51,9 @@ a{
     text-decoration: none;
     font-size: 16px;
     color: $purple;
+    &:not(.hire-a):hover{
+        text-decoration: underline;
+    }
 }
 ul {
     list-style-type: none;
@@ -63,12 +66,14 @@ ul {
 .hero {
     height: 100vh;
     padding: 443px 0 0 0;
+    position: relative;
 }
 .hero-h1 {
     font-family: 'Open Sans', sans-serif;
-    font-size: 55px;
+    font-size: 48px;
     line-height: 1.2;
     padding-bottom: 10px;
+    word-wrap: break-word;
     color: $purple;
     background: linear-gradient(135deg, $purple, $pink);
     -webkit-background-clip: text;
@@ -78,7 +83,7 @@ ul {
     display: none;
 }
 .navBar--mob {
-    position: fixed;
+    position: absolute;
     top: 45px;
     right: 45px;
     z-index: 1;
@@ -194,12 +199,15 @@ ul {
     }
     .btn {
         display: inline-block;
-        font-size: 16px;
+        font-size: 15px;
         font-family: 'Roboto', sans-serif;
         padding: 0.7em 2em;
         border-radius: 100px;
         border: none;
         cursor: pointer;
+        &:hover {
+            transition: all 0.2s ease;
+        }
     }
     .btn-live {
         color: $purple;
@@ -212,6 +220,7 @@ ul {
     }
     .btn-src {
         margin-left: 3px;
+        padding: 0.7em 2em;
         color: $gray;
         background-color: transparent;
         &:hover{
@@ -231,13 +240,15 @@ ul {
 //------------------------------------------------------PROJECTS
 .hire, footer {
     background-color: $offWhite;
+    // z-index: -2;
 }
 .hire {
     padding: 3em 0;
     .hire-a {
-        display: block;
+        position: relative;
+        display: inline-block;
         color: $darkGray;
-        font-size: 1.5em;
+        font-size: 1.3em;
         font-weight: 700;
     }
     .contact {
@@ -260,7 +271,7 @@ ul {
 }
 
 //------------------------------------------DSKTP QUERY
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
     .hero {
         padding: 0;
         .hero-h1 {
@@ -268,7 +279,6 @@ ul {
             line-height: 1;
             padding-bottom: 25px;
             margin-top: 25%;
-            word-wrap: break-word;
         }
         .navBar--mob {
             display: none;
@@ -284,8 +294,9 @@ ul {
                 &:last-child {
                     font-weight: 700;
                 }
-                &:hover:not(:last-child) {
-                    color: $gray;
+                &:hover {
+                    text-decoration: underline;
+                    // transition: all 0.3s ease;
                 }
             }
         }
@@ -320,12 +331,26 @@ ul {
     .hire {
         .hire-a {
             font-size: 3.4em;
+            position: relative;
+            z-index: 0;
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                z-index: -1;
+                width: 10%; 
+                height: 8px;
+                bottom: 2px;
+                left: 0;
+                background: $purple;
+                transition: width .3s ease;
+            }
+            &:hover:after{
+                width: 100%;
+            }
         }
         .contact {
             margin: 4em auto 11em auto;
-        }
-        .mail {
-            margin-bottom: 20px;
         }
     }
     .foot {
