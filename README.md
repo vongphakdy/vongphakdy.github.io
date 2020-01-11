@@ -13,7 +13,7 @@
 
 ## User Interface
 
-[Website Design for Desktop + Mobile](./img/readMePreview.png)
+![Website Design for Desktop + Mobile](./img/readMePreview.png)
 
 
 
