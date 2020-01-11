@@ -1,6 +1,6 @@
 # Vongphakdy.io
 
-**Personal portfolio page created to showcase my UI design and front-end development capabilities***
+**Personal portfolio page created to showcase my UI design and front-end development capabilities**
 
 ## Technologies Used
 
