@@ -342,7 +342,6 @@ ul {
     font-size: 100px;
     line-height: 1;
     padding-bottom: 25px;
-    margin-top: 45%;
   }
   .hero .navBar--mob {
     display: none;
@@ -443,7 +442,6 @@ ul {
   }
   .hero .hero-h1 {
     font-size: 160px;
-    margin-top: 25%;
   }
   .projects .card .btn {
     padding: 0.7em 3em;
