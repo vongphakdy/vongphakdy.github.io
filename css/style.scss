@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:700|Roboto:400,700&display=swap');
+@mixin prefix($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }   
+    #{$property}: $value;
+  }
 
 $purple: #9C42EA;
 $pink: #FF46B8;
@@ -38,8 +44,6 @@ h3 {
         margin: 0 15px 0 -9rem;
         position: absolute;
         top: 50%;
-        -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
         transform: translateY(-50%);
     }
 }
@@ -78,6 +82,7 @@ ul {
     color: $purple;
     background: linear-gradient(135deg, $purple, $pink);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 .nav-bar {

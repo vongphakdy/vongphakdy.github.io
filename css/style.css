@@ -84,6 +84,7 @@ ul {
   color: #9C42EA;
   background: linear-gradient(135deg, #9C42EA, #FF46B8);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
