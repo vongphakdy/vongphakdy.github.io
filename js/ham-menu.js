@@ -1,10 +1,26 @@
 var navLink = document.querySelectorAll('.nav--id-links');
 var toggled = document.querySelector('.toggler');
-
-function buttonClick (e) {
-    toggled.checked = false;
-}
+var navBar = document.querySelector('.navBar--mob');
 
 for (i = 0; i < navLink.length; i++) {
-    navLink[i].addEventListener("click", buttonClick);
+    navLink[i].addEventListener('click', (e) => {
+        toggled.checked = false;
+    });
 }
+
+toggled.addEventListener('click', (e) => {
+    if (toggled.checked == true) {
+        navBar.style.position = 'fixed';
+        console.log("fixed");
+    } else {
+        navBar.style.position = 'absolute';
+        console.log("abs");
+    }
+
+    for (i = 0; i < navLink.length; i++) {
+        navLink[i].addEventListener('click', (e) => {
+            toggled.checked = false;
+            navBar.style.position = 'absolute';
+        });
+    }
+})
