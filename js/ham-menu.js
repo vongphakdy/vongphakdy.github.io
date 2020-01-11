@@ -1,7 +1,10 @@
-// var navLinks = document.querySelectorAll(".nav--id-links");
+var navLink = document.querySelectorAll('.nav--id-links');
+var toggled = document.querySelector('.toggler');
 
-// navLinks.onclick = e => {
-//     console.log("bitch");
-// }
+function buttonClick (e) {
+    toggled.checked = false;
+}
 
-console.log(document.URL);
+for (i = 0; i < navLink.length; i++) {
+    navLink[i].addEventListener("click", buttonClick);
+}
