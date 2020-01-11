@@ -65,10 +65,11 @@ ul {
 //------------------------------------------------------HERO
 .hero {
     height: 100vh;
-    padding: 443px 0 0 0;
     position: relative;
 }
 .hero-h1 {
+    position: absolute;
+    bottom: 25%;
     font-family: 'Open Sans', sans-serif;
     font-size: 48px;
     line-height: 1.2;
