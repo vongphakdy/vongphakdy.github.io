@@ -92,7 +92,7 @@ ul {
 }
 
 .navBar--mob {
-  position: absolute;
+  position: fixed;
   top: 45px;
   right: 45px;
   z-index: 1;
