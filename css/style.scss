@@ -249,7 +249,7 @@ ul {
         color: $purple;
     }
 }
-//------------------------------------------------------PROJECTS
+//------------------------------------------------------HIRE
 .hire, footer {
     background-color: $offWhite;
     // z-index: -2;
@@ -270,6 +270,9 @@ ul {
         margin: 0 0 0.7em 0;
     }
 }
+.foot p {
+    font-size: 16px;
+}
 .foot-nav {
     margin: 0 0 3.3em 0;
     li {
@@ -278,8 +281,17 @@ ul {
 }
 .detail {
     width: 100%;
-    border-top: 10px solid $purple;
-    margin-top: 2em;
+    margin-top: 1em;
+    background: linear-gradient(135deg, $purple, $pink);
+    padding: 0.3em 0;
+    .wrapper {
+        display: flex;
+        align-items: center;
+    }
+    small {
+        color: white;
+        font-size: 14px;
+    }
 }
 //-----------------------------------------------------------TBLT QUERY
 @media screen and (min-width: 900px) {
@@ -361,22 +373,8 @@ ul {
             }
         }
         .contact {
-            margin: 4em auto 11em auto;
+            margin: 4em auto 4em auto;
         }
-    }
-    .foot {
-        display: flex;
-        justify-content: space-between;
-        .foot-nav {
-            margin: 0 0 0 0;
-            li {
-                display: inline;
-                margin: 0 55px 0 0;
-            }
-        }
-    }
-    .detail {
-        margin: 1.5em 0 0 0;
     }
 }
 //-----------------------------------------------------------DSKTP QUERY
@@ -398,6 +396,26 @@ ul {
     .hire {
         .hire-a {
             font-size: 3.4em;
+        }
+        .contact {
+            margin: 4em auto 11em auto;
+        }
+    }
+    .foot {
+        display: flex;
+        justify-content: space-between;
+        .foot-nav {
+            margin: 0 0 0 0;
+            li {
+                display: inline;
+                margin: 0 55px 0 0;
+            }
+        }
+    }
+    .detail {
+        margin: 1em 0 0 0;
+        .wrapper {
+            justify-content: flex-end;
         }
     }
 }

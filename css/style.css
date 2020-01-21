@@ -328,6 +328,10 @@ ul {
   margin: 0 0 0.7em 0;
 }
 
+.foot p {
+  font-size: 16px;
+}
+
 .foot-nav {
   margin: 0 0 3.3em 0;
 }
@@ -338,8 +342,23 @@ ul {
 
 .detail {
   width: 100%;
-  border-top: 10px solid #9C42EA;
-  margin-top: 2em;
+  margin-top: 1em;
+  background: linear-gradient(135deg, #9C42EA, #FF46B8);
+  padding: 0.3em 0;
+}
+
+.detail .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.detail small {
+  color: white;
+  font-size: 14px;
 }
 
 @media screen and (min-width: 900px) {
@@ -423,6 +442,25 @@ ul {
     width: 100%;
   }
   .hire .contact {
+    margin: 4em auto 4em auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    padding: 0;
+  }
+  .hero .hero-h1 {
+    font-size: 160px;
+  }
+  .projects .card .btn {
+    padding: 0.7em 3em;
+    font-size: 15px;
+  }
+  .hire .hire-a {
+    font-size: 3.4em;
+  }
+  .hire .contact {
     margin: 4em auto 11em auto;
   }
   .foot {
@@ -441,23 +479,12 @@ ul {
     margin: 0 55px 0 0;
   }
   .detail {
-    margin: 1.5em 0 0 0;
+    margin: 1em 0 0 0;
   }
-}
-
-@media screen and (min-width: 1200px) {
-  .hero {
-    padding: 0;
-  }
-  .hero .hero-h1 {
-    font-size: 160px;
-  }
-  .projects .card .btn {
-    padding: 0.7em 3em;
-    font-size: 15px;
-  }
-  .hire .hire-a {
-    font-size: 3.4em;
+  .detail .wrapper {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 /*# sourceMappingURL=style.css.map */
