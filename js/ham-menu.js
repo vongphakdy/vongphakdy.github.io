@@ -11,10 +11,8 @@ for (i = 0; i < navLink.length; i++) {
 toggled.addEventListener('click', (e) => {
     if (toggled.checked == true) {
         navBar.style.position = 'fixed';
-        console.log("fixed");
     } else {
         navBar.style.position = 'absolute';
-        console.log("abs");
     }
 
     for (i = 0; i < navLink.length; i++) {
