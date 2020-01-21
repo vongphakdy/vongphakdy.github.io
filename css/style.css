@@ -94,13 +94,6 @@ ul {
   }
 }
 
-@-moz-document url-prefix() {
-  .hero-h1 {
-    color: #9C42EA;
-    background: none;
-  }
-}
-
 .nav-bar {
   display: none;
 }
