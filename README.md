@@ -14,7 +14,3 @@
 ## User Interface
 
 ![Website Design for Desktop + Mobile](./img/readMePreview.png)
-
-
-
-tester
