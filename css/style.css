@@ -81,11 +81,12 @@ ul {
   line-height: 1.2;
   padding-bottom: 10px;
   word-wrap: break-word;
-  color: #9C42EA;
   background: linear-gradient(135deg, #9C42EA, #FF46B8);
+  -moz-background: none;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  -moz-color: #9C42EA;
 }
 
 .nav-bar {
